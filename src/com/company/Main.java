@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         // Resume class object is assigned resumeObj reference
         Resume resumeObj = new Resume();
+        ResumeMaker makerObj= new ResumeMaker();
         Scanner keyboard = new Scanner(System.in);
         String name;//to hold the name to display on the resume
         String email;//to hold the email to display on the resume
@@ -21,7 +22,7 @@ public class Main {
         name = keyboard.nextLine();//receiving the name from the user
         boolean nameIsValid = true;//initializing the control varialble to true
         while (nameIsValid) {
-            if (resumeObj.nameValidator(name)) {//calling the name validator from the Resume class
+            if (makerObj.nameValidator(name)) {//calling the name validator from the Resume class
                 resumeObj.setName(name);//if it is valid the loop breaks here other wise it prompt user for another try and keep moving until the user enters the correct format
                 nameIsValid = false;
             } else {
@@ -37,7 +38,7 @@ public class Main {
         "Resume" .it will keep prompting the user to Enter the correct email address until it receives the correct fomrat
          */
         while (true) {
-            if (resumeObj.emailValidator(email)) {
+            if (makerObj.emailValidator(email)) {
                 resumeObj.setEmailAddress(email);
                 break;
             } else {
@@ -64,11 +65,11 @@ public class Main {
         prompting user for the eductional background he/she has and loops through the number of experience they have times.
          */
         int index = 0;
-        System.out.printf("please Enter the %s Educational achievements you have starting with the most recent one %n",numOfEduAchivmnts);
+        System.out.printf("please Enter the %s Educational achievements you have starting with the most recent one %n Strar",numOfEduAchivmnts);
         while (!(index == Integer.parseInt(numOfEduAchivmnts))) {
 
             educationBack = keyboard.nextLine();
-            resumeObj.eduackDataBase(educationBack);
+            makerObj.eduackDataBase(educationBack);
             index++;
         }
         /*
@@ -93,7 +94,7 @@ public class Main {
         System.out.printf("please Enter the %s work experience you have starting with the most recent one %n",numOfOrgWorkdON);
         while (!(indey == Integer.parseInt(numOfOrgWorkdON))) {
             workExpern = keyboard.nextLine();
-            resumeObj.workExDataBase(workExpern);//adding the value to the arrayList in the Resume class through a methood calling
+            makerObj.workExDataBase(workExpern);//adding the value to the arrayList in the Resume class through a methood calling
             indey++;
         }
         /*
@@ -117,7 +118,7 @@ public class Main {
         System.out.printf("please Enter %s skill Rating  you have %n",numOfSkill);
         while (!(indez == Integer.parseInt(numOfSkill))) {
             skillRating = keyboard.nextLine();
-            resumeObj.skillRatingDataBase(skillRating);//adding the value to the arrayList in the Resume class through a method calling
+            makerObj.skillRatingDataBase(skillRating);//adding the value to the arrayList in the Resume class through a method calling
             indez++;
         }
         /*
